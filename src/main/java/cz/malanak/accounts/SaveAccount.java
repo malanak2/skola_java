@@ -4,7 +4,7 @@ import cz.malanak.identification.Customer;
 
 import java.math.BigDecimal;
 
-public class SaveAccount extends BankAccount {
+public class SaveAccount extends BaseAccount {
     private BigDecimal _interest_rate;
     public SaveAccount(Customer owner, BigDecimal interest_rate) {
         super(owner);
