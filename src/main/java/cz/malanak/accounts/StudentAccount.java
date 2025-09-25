@@ -10,4 +10,9 @@ public class StudentAccount extends BaseAccount {
         _isic = ISIC;
         _school = School;
     }
+
+    @Override
+    public void printAccountInfo() {
+        System.out.println(String.format("[StudentAccount]: %s, %s, %s, %s, %f", _owner.toString(), uuid.toString(), _isic, _school, _balance.floatValue()));
+    }
 }

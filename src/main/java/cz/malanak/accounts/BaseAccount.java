@@ -5,7 +5,7 @@ import cz.malanak.identification.Customer;
 import java.math.BigDecimal;
 import java.util.UUID;
 
-public class BaseAccount {
+public abstract class BaseAccount {
     protected BigDecimal _balance;
     public UUID uuid;
     public final Customer _owner;
@@ -14,4 +14,6 @@ public class BaseAccount {
         _balance = new BigDecimal(0);
         uuid = UUID.randomUUID();
     }
+
+    public abstract void printAccountInfo();
 }

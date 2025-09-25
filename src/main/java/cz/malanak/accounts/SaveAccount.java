@@ -12,4 +12,9 @@ public class SaveAccount extends BaseAccount {
     }
 
     public BigDecimal get_interest_rate() { return _interest_rate; };
+
+    @Override
+    public void printAccountInfo() {
+        System.out.println(String.format("[SaveAccount]: %s, %s, %s, %f", _owner.toString(), uuid.toString(), _interest_rate, _balance.floatValue()));
+    }
 }

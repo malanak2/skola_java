@@ -1,6 +1,13 @@
 package cz.malanak;
 
 
+import cz.malanak.accounts.BankAccount;
+import cz.malanak.accounts.SaveAccount;
+import cz.malanak.accounts.StudentAccount;
+import cz.malanak.identification.Customer;
+
+import java.math.BigDecimal;
+
 /**
  * Main class
  */
@@ -11,6 +18,13 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        System.out.println("Hello, World!");
+        Customer customer = new Customer();
+        customer.name = "Adolf Had";
+        BankAccount account = new BankAccount(customer);
+        account.printAccountInfo();
+        StudentAccount account1 = new StudentAccount(customer, "yes", "Mozartak");
+        account1.printAccountInfo();
+        SaveAccount account2 = new SaveAccount(customer, new BigDecimal(-99));
+        account2.printAccountInfo();
     }
 }
