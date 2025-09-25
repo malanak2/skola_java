@@ -15,6 +15,6 @@ public class SaveAccount extends BaseAccount {
 
     @Override
     public void printAccountInfo() {
-        System.out.println(String.format("[SaveAccount]: %s, %s, %s, %f", _owner.toString(), uuid.toString(), _interest_rate, _balance.floatValue()));
+        System.out.println(String.format("[SaveAccount]: %s, %s, %s, %f", owner.toString(), uuid.toString(), _interest_rate, _balance.floatValue()));
     }
 }

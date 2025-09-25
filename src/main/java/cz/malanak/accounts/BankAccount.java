@@ -12,6 +12,6 @@ public class BankAccount extends BaseAccount {
     }
 
     public void printAccountInfo() {
-        System.out.println(String.format("[BankAccount]: %s, %s, %f", _owner.toString(), uuid.toString(), _balance.floatValue()));
+        System.out.println(String.format("[BankAccount]: %s, %s, %f", owner.toString(), uuid.toString(), _balance.floatValue()));
     }
 }
