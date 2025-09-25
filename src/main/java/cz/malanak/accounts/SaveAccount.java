@@ -10,4 +10,6 @@ public class SaveAccount extends BankAccount {
         super(owner);
         _interest_rate = interest_rate;
     }
+
+    public BigDecimal get_interest_rate() { return _interest_rate; };
 }
