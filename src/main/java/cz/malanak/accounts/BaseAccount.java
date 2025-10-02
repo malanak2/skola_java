@@ -33,4 +33,6 @@ public abstract class BaseAccount {
         _balance = _balance.subtract(value);
         return value;
     }
+
+    public BigDecimal getBalance() { return _balance;}
 }

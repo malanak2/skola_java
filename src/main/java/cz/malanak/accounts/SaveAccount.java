@@ -1,5 +1,6 @@
 package cz.malanak.accounts;
 
+import cz.malanak.Logger;
 import cz.malanak.identification.Customer;
 
 import java.math.BigDecimal;
@@ -15,6 +16,6 @@ public class SaveAccount extends BaseAccount {
 
     @Override
     public void printAccountInfo() {
-        System.out.println(String.format("[SaveAccount]: %s, %s, %s, %f", owner.toString(), uuid.toString(), _interest_rate, _balance.floatValue()));
+        Logger.debug(String.format("[SaveAccount]: %s, %s, %s, %f", owner.toString(), uuid.toString(), _interest_rate, _balance.floatValue()));
     }
 }

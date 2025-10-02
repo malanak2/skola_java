@@ -1,5 +1,6 @@
 package cz.malanak.accounts;
 
+import cz.malanak.Logger;
 import cz.malanak.identification.Customer;
 
 import java.math.BigDecimal;
@@ -12,6 +13,6 @@ public class BankAccount extends BaseAccount {
     }
 
     public void printAccountInfo() {
-        System.out.println(String.format("[BankAccount]: %s, %s, %f", owner.toString(), uuid.toString(), _balance.floatValue()));
+        Logger.debug(String.format("[BankAccount]: %s, %s, %f", owner.toString(), uuid.toString(), _balance.floatValue()));
     }
 }

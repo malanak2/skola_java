@@ -14,6 +14,11 @@ public class Logger {
     public static void info(String message) {
         log("INFO", message);
     }
+    public static void debug(String message) {
+        if (Global.DEBUG) {
+            log("DEBUG", message);
+        }
+    }
     public static void error(String message) {
         log("\u001B[31mERROR\u001B[0m", message);
     }
