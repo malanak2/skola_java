@@ -6,6 +6,8 @@ import jdk.jshell.spi.ExecutionControl;
 import java.math.BigDecimal;
 import java.util.UUID;
 
+import static cz.malanak.Logger.warn;
+
 public abstract class BaseAccount {
     protected BigDecimal _balance;
     public UUID uuid;
@@ -17,12 +19,12 @@ public abstract class BaseAccount {
     }
 
     public abstract void printAccountInfo();
-    public void addBalance(BigDecimal value) throws ExecutionControl.NotImplementedException {
+    public void addBalance(BigDecimal value) {
         if (value.floatValue() < 0) {
             throw new IllegalArgumentException("Negative/0 values cannot be added balance");
         }
         if (value.compareTo(new BigDecimal(100000)) > 0) {
-            throw new ExecutionControl.NotImplementedException("Not implemented");
+            warn(String.format("Customer %s has deposited %f to his account with id %s", owner.toString(), value.floatValue(), uuid));
         }
         _balance = _balance.add(value);
     }

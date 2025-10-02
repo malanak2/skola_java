@@ -22,6 +22,7 @@ public class Main {
         customer.name = "Adolf Had";
         BankAccount account = new BankAccount(customer);
         account.printAccountInfo();
+        account.addBalance(new BigDecimal("8999999999"));
         StudentAccount account1 = new StudentAccount(customer, "yes", "Mozartak");
         account1.printAccountInfo();
         SaveAccount account2 = new SaveAccount(customer, new BigDecimal(-99));
