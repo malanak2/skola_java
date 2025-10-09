@@ -1,5 +1,7 @@
 package cz.malanak.Serialization;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import cz.malanak.accounts.BankAccount;
 import cz.malanak.accounts.SaveAccount;
 import cz.malanak.accounts.StudentAccount;
@@ -47,4 +49,25 @@ public class Serializer {
                }
                """, account.uuid, account.owner.uuid, account.getBalance().toString(), account.get_isic(), account.get_school());
     }
+
+    public static class Xml {
+        public static String serialize(Customer c) throws JsonProcessingException {
+            XmlMapper mapper = new XmlMapper();
+            return mapper.writeValueAsString(c);
+        }
+
+    public String serialize(BankAccount account) throws JsonProcessingException {
+        XmlMapper mapper = new XmlMapper();
+        return mapper.writeValueAsString(account);
+    }
+    public static String serialize(SaveAccount account) throws JsonProcessingException {
+        XmlMapper mapper = new XmlMapper();
+        return mapper.writeValueAsString(account);
+
+    }
+    public static String serialize(StudentAccount account) throws JsonProcessingException {
+        XmlMapper mapper = new XmlMapper();
+        return mapper.writeValueAsString(account);
+    }
+}
 }

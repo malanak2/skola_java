@@ -16,7 +16,7 @@ public class Logger {
     }
     public static void debug(String message) {
         if (Global.DEBUG) {
-            log("DEBUG", message);
+            log("\u001B[32mDEBUG\u001B[0m", message);
         }
     }
     public static void error(String message) {

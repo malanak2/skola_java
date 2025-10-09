@@ -1,5 +1,6 @@
 package cz.malanak.accounts;
 
+import com.google.gson.annotations.SerializedName;
 import cz.malanak.identification.Customer;
 import jdk.jshell.spi.ExecutionControl;
 
@@ -9,8 +10,11 @@ import java.util.UUID;
 import static cz.malanak.Logger.warn;
 
 public abstract class BaseAccount {
+    @SerializedName("balance")
     protected BigDecimal _balance;
+    @SerializedName("balance")
     public UUID uuid;
+    @SerializedName("owner")
     public final Customer owner;
     public BaseAccount(Customer owner) {
         this.owner = owner;
