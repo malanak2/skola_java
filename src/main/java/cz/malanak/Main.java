@@ -38,6 +38,6 @@ public class Main {
 
         Logger.info(SaveData.SaveData(arr, customers));
         Serializer serializer = SerializerFactory.createSerializer();
-        Logger.info(Serializer.Xml.serialize((SaveAccount) arr[0]));
+        Logger.info(Serializer.Xml.serialize((SaveAccount) arr[2]));
     }
 }
