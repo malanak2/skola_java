@@ -26,4 +26,8 @@ public class PaymentCardHelper {
         Date exp_date = exp.getTime();
         return exp_date;
     }
+
+    public static int generatePin() {
+        return r.nextInt(0000, 9999);
+    }
 }
