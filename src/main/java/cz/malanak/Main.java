@@ -2,7 +2,7 @@ package cz.malanak;
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import cz.malanak.Helpers.PaymentCardService;
+import cz.malanak.Services.PaymentCardService;
 import cz.malanak.accounts.BankAccount;
 import cz.malanak.accounts.BaseAccount;
 import cz.malanak.accounts.SaveAccount;
@@ -19,12 +19,11 @@ import java.util.List;
  * Main class
  */
 public class Main {
-    public PaymentCard[] cards;
     /**
      * Entrypoint
      * @param args Commandline arguments
      */
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         PaymentCardFactory paymentCardFactory = new PaymentCardFactory();
         Customer customer = new Customer("Adolf Had");
         BankAccount account = new BankAccount(customer);
@@ -48,9 +47,7 @@ public class Main {
         // Logger.info(gotten_card.toString());
 
         List<PaymentCard> cards_for_acc_2 = PaymentCardService.getCards(account2);
-        cards_for_acc_2.forEach((c) -> {
-            Logger.debug(c.toString());
-        });
+        cards_for_acc_2.forEach((c) -> Logger.debug(c.toString()));
 
         // Logger.info(SaveData.SaveData(arr, customers));
         // Logger.info(Serializer.Xml.serialize((SaveAccount) arr[2]));

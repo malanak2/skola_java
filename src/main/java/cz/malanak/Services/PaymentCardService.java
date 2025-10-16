@@ -1,4 +1,4 @@
-package cz.malanak.Helpers;
+package cz.malanak.Services;
 
 import cz.malanak.accounts.BaseAccount;
 import cz.malanak.card.PaymentCard;
