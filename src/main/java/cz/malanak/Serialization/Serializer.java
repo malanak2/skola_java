@@ -56,7 +56,7 @@ public class Serializer {
             return mapper.writeValueAsString(c);
         }
 
-    public String serialize(BankAccount account) throws JsonProcessingException {
+    public static String serialize(BankAccount account) throws JsonProcessingException {
         XmlMapper mapper = new XmlMapper();
         return mapper.writeValueAsString(account);
     }

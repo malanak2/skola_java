@@ -1,5 +1,8 @@
-package cz.malanak.accounts;
+package cz.malanak.factories;
 
+import cz.malanak.accounts.BankAccount;
+import cz.malanak.accounts.SaveAccount;
+import cz.malanak.accounts.StudentAccount;
 import cz.malanak.identification.Customer;
 
 import java.math.BigDecimal;
