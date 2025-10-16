@@ -4,11 +4,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 import java.util.UUID;
-import java.util.random.RandomGenerator;
 
 public class PaymentCardHelper {
-    private static int YEARS_VALID = 5;
-    private static Random r = new Random();
+    private static final int YEARS_VALID = 5;
+    private static final Random r = new Random();
     public static String generateCardNumber() {
         return UUID.randomUUID().toString();
     }
@@ -27,6 +26,6 @@ public class PaymentCardHelper {
     }
 
     public static int generatePin() {
-        return r.nextInt(0000, 9999);
+        return r.nextInt(0, 9999);
     }
 }
