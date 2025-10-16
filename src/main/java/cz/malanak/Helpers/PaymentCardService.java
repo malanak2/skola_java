@@ -5,10 +5,9 @@ import cz.malanak.card.PaymentCard;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class PaymentCardManager {
+public class PaymentCardService {
     private static ArrayList<PaymentCard> cards = new ArrayList<PaymentCard>()
     ;
 
