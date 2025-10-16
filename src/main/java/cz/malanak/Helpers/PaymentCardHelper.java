@@ -7,7 +7,7 @@ import java.util.UUID;
 import java.util.random.RandomGenerator;
 
 public class PaymentCardHelper {
-
+    private static int YEARS_VALID = 5;
     private static Random r = new Random();
     public static String generateCardNumber() {
         return UUID.randomUUID().toString();
@@ -22,9 +22,8 @@ public class PaymentCardHelper {
         exp.set(Calendar.HOUR_OF_DAY, 0);
         exp.set(Calendar.MINUTE, 0);
         exp.set(Calendar.SECOND, 0);
-        exp.add(Calendar.YEAR, 5);
-        Date exp_date = exp.getTime();
-        return exp_date;
+        exp.add(Calendar.YEAR, YEARS_VALID);
+        return exp.getTime();
     }
 
     public static int generatePin() {

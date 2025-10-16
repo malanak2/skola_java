@@ -7,7 +7,7 @@ public class PaymentCard {
     private final String cardNumber;
     private final Date expirationDate;
     private final int ccv;
-    private final int pin;
+    private int pin;
     public enum Type {
         credit,
         debit
