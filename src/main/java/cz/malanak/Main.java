@@ -1,7 +1,6 @@
 package cz.malanak;
 
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import cz.malanak.Services.PaymentCardService;
 import cz.malanak.accounts.BankAccount;
 import cz.malanak.accounts.BaseAccount;
@@ -43,10 +42,10 @@ public class Main {
         PaymentCardService.addCard(card3);
         Logger.info(card.toString());
 
-        PaymentCard gotten_card = PaymentCardService.getCard(card.getCardNumber());
+        PaymentCard gotten_card = PaymentCardService.getCardByNumber(card.getCardNumber());
         // Logger.info(gotten_card.toString());
 
-        List<PaymentCard> cards_for_acc_2 = PaymentCardService.getCards(account2);
+        List<PaymentCard> cards_for_acc_2 = PaymentCardService.getCardsForAccount(account2);
         cards_for_acc_2.forEach((c) -> Logger.debug(c.toString()));
 
         // Logger.info(SaveData.SaveData(arr, customers));

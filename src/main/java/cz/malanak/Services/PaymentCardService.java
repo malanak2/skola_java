@@ -18,11 +18,10 @@ public class PaymentCardService {
         return cards.remove(card);
     }
 
-    public static PaymentCard getCard(String cardNumber) {
+    public static PaymentCard getCardByNumber(String cardNumber) {
         return cards.stream().filter(c -> cardNumber.equals(c.getCardNumber())).findFirst().orElse(null);
     }
-    public static List<PaymentCard> getCards(BaseAccount account) {
-        // Dejme tomu, streamy sou *********
+    public static List<PaymentCard> getCardsForAccount(BaseAccount account) {
         return cards.stream().filter(c -> account.uuid.equals(c.getAccountId())).collect(Collectors.toList());
     }
 }
