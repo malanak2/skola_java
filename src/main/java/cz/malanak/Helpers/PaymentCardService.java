@@ -8,8 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class PaymentCardService {
-    private static ArrayList<PaymentCard> cards = new ArrayList<PaymentCard>()
-    ;
+    private static final ArrayList<PaymentCard> cards = new ArrayList<PaymentCard>();
 
     public static void addCard(PaymentCard card) {
         cards.add(card);
