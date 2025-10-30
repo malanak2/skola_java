@@ -6,17 +6,17 @@ import java.util.Random;
 import java.util.UUID;
 
 public class PaymentCardHelper {
-    private static final int YEARS_VALID = 5;
-    private static final Random r = new Random();
-    public static String generateCardNumber() {
+    private final int YEARS_VALID = 5;
+    private final Random r = new Random();
+    public String generateCardNumber() {
         return UUID.randomUUID().toString();
     }
 
-    public static int GenerateCcv() {
+    public int GenerateCcv() {
         return r.nextInt(0, 900) + 100;
     }
 
-    public static Date generateExpDate() {
+    public Date generateExpDate() {
         Calendar exp = Calendar.getInstance();
         exp.set(Calendar.HOUR_OF_DAY, 0);
         exp.set(Calendar.MINUTE, 0);
@@ -25,7 +25,7 @@ public class PaymentCardHelper {
         return exp.getTime();
     }
 
-    public static int generatePin() {
+    public int generatePin() {
         return r.nextInt(0, 9999);
     }
 }

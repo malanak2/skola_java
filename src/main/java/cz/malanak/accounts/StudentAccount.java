@@ -6,8 +6,8 @@ import cz.malanak.identification.Customer;
 public class StudentAccount extends BaseAccount {
     private String _isic;
     private String _school;
-    public StudentAccount(Customer owner, String ISIC, String School) {
-        super(owner);
+    public StudentAccount(Customer owner, String ISIC, String School, AccountHelper accountHelper, Logger logger) {
+        super(owner, accountHelper, logger);
         _isic = ISIC;
         _school = School;
     }
@@ -22,6 +22,6 @@ public class StudentAccount extends BaseAccount {
 
     @Override
     public void printAccountInfo() {
-        Logger.debug(String.format("[StudentAccount]: %s, %s, %s, %s, %f", owner.toString(), uuid.toString(), _isic, _school, _balance.floatValue()));
+        logger.debug(String.format("[StudentAccount]: %s, %s, %s, %s, %f", owner.toString(), uuid.toString(), _isic, _school, _balance.floatValue()));
     }
 }

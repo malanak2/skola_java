@@ -7,8 +7,8 @@ import java.math.BigDecimal;
 
 public class SaveAccount extends BaseAccount {
     private BigDecimal _interest_rate;
-    public SaveAccount(Customer owner, BigDecimal interest_rate) {
-        super(owner);
+    public SaveAccount(Customer owner, BigDecimal interest_rate, AccountHelper accountHelper, Logger logger) {
+        super(owner, accountHelper, logger);
         _interest_rate = interest_rate;
     }
 
@@ -16,6 +16,6 @@ public class SaveAccount extends BaseAccount {
 
     @Override
     public void printAccountInfo() {
-        Logger.debug(String.format("[SaveAccount]: %s, %s, %s, %f", owner.toString(), uuid.toString(), _interest_rate, _balance.floatValue()));
+        logger.debug(String.format("[SaveAccount]: %s, %s, %s, %f", owner.toString(), uuid.toString(), _interest_rate, _balance.floatValue()));
     }
 }

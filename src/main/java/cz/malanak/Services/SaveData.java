@@ -1,5 +1,6 @@
 package cz.malanak.Services;
 
+import com.google.inject.Inject;
 import cz.malanak.Serialization.Serializer;
 import cz.malanak.accounts.BankAccount;
 import cz.malanak.accounts.BaseAccount;
@@ -7,11 +8,15 @@ import cz.malanak.accounts.SaveAccount;
 import cz.malanak.accounts.StudentAccount;
 import cz.malanak.factories.SerializerFactory;
 import cz.malanak.identification.Customer;
+import jdk.jfr.Unsigned;
 
 public class SaveData {
-    public static String SaveData(BaseAccount[] accounts, Customer[] customers) {
+    @Inject
+    private SerializerFactory serializerFactory;
+
+    public String SaveData(BaseAccount[] accounts, Customer[] customers) {
         StringBuilder sb = new StringBuilder();
-        Serializer s = SerializerFactory.createSerializer();
+        Serializer s = serializerFactory.createSerializer();
         sb.append("""
                 {
                     "customers": [
