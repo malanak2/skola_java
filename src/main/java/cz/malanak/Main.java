@@ -17,6 +17,7 @@ import cz.malanak.factories.PaymentCardFactory;
 import cz.malanak.factories.SerializerFactory;
 import cz.malanak.identification.Customer;
 import jakarta.inject.Inject;
+import org.apache.log4j.BasicConfigurator;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -31,7 +32,15 @@ public class Main {
      * @param args Commandline arguments
      */
     public static void main(String[] args) {
+        // Source - https://stackoverflow.com/questions/12532339/no-appenders-could-be-found-for-loggerlog4j
+// Posted by maba
+// Retrieved 2025-11-06, License - CC BY-SA 3.0
+
+        BasicConfigurator.configure();
+
         Injector injector = Guice.createInjector(new BInjector());
+
+
         App app = injector.getInstance(App.class);
         app.run();
     }
