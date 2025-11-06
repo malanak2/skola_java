@@ -1,7 +1,9 @@
 package cz.malanak.Serialization;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import cz.malanak.History.Transaction;
 import cz.malanak.accounts.BankAccount;
 import cz.malanak.accounts.SaveAccount;
 import cz.malanak.accounts.StudentAccount;
@@ -48,6 +50,11 @@ public class Serializer {
                 "school": "%s"
                }
                """, account.uuid, account.owner.uuid, account.getBalance().toString(), account.get_isic(), account.get_school());
+    }
+
+    public String serialize(Transaction t) throws JsonProcessingException {
+        JsonMapper mapper = new JsonMapper();
+        return mapper.writeValueAsString(t);
     }
 
     public static class Xml {

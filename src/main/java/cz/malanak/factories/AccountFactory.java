@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import cz.malanak.Jobs.ApplyInterestJob;
 import cz.malanak.Logger;
 import cz.malanak.Services.AccountService;
+import cz.malanak.Services.TransactionService;
 import cz.malanak.accounts.AccountHelper;
 import cz.malanak.accounts.BankAccount;
 import cz.malanak.accounts.SaveAccount;
@@ -22,7 +23,8 @@ public class AccountFactory {
     private Logger logger;
     @Inject
     Scheduler scheduler;
-
+    @Inject
+    TransactionService transactionService;
 
     public BankAccount createAccount(Customer customer) {
         return new BankAccount(customer, accountHelper, logger);
@@ -33,6 +35,7 @@ public class AccountFactory {
         jobData.put("account", account.uuid.toString());
         jobData.put("logger", logger);
         jobData.put("accountService", accountService);
+        jobData.put("transactionService", transactionService);
         // Define a job
         JobDetail job = JobBuilder.newJob(ApplyInterestJob.class)
                 .withIdentity("applyInterestJob-" + account.uuid, "interest")

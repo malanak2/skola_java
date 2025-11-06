@@ -1,11 +1,14 @@
 package cz.malanak.accounts;
 
 import com.google.gson.annotations.SerializedName;
+import cz.malanak.History.Transaction;
 import cz.malanak.Logger;
 import cz.malanak.identification.Customer;
 import jdk.jshell.spi.ExecutionControl;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
 
@@ -20,12 +23,14 @@ public abstract class BaseAccount {
     public UUID uuid;
     @SerializedName("owner")
     public final Customer owner;
+    public List<Transaction> transactionHistory;
     public BaseAccount(Customer owner, AccountHelper accountHelper, Logger logger) {
         this.owner = owner;
         this.accountHelper = accountHelper;
         this.logger = logger;
         _balance = new BigDecimal(0);
         uuid = UUID.randomUUID();
+        this.transactionHistory = new ArrayList<>();
     }
 
     public abstract void printAccountInfo();
